@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0d1020;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    background: rgba(20, 20, 45, 0.95);
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff70b7;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav ul a:hover {
+    color: #ff70b7;
+}
+
+.menu {
+    display: none;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 7px 12px;
+    cursor: pointer;
+}
+
+section {
+    padding: 80px 10%;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #ff70b7;
+}
+
+.hero p, .about p, .project p {
+    color: #b8bed3;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff70b7, #9c83ff);
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.profile {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff70b7, #9c83ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    font-weight: bold;
+    color: #17152c;
+    flex-shrink: 0;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #ff70b7;
+}
+
+.about {
+    background: #151a30;
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill, .project {
+    background: #191e38;
+    border: 1px solid #34334f;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: .3s;
+}
+
+.skill:hover, .project:hover {
+    transform: translateY(-7px);
+    border-color: #ff70b7;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project {
+    text-align: left;
+}
+
+.project h3 {
+    color: #c6a5ff;
+    margin-bottom: 12px;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ff70b7;
+    text-decoration: none;
+}
+
+.education-card {
+    background: #191e38;
+    padding: 25px;
+    border-left: 4px solid #ff70b7;
+    border-radius: 10px;
+}
+
+.education-card p {
+    color: #b8bed3;
+}
+
+.contact {
+    background: linear-gradient(120deg, #302047, #25264c);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contact a {
+    color: white;
+    margin: 12px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #aaa;
+    border-top: 1px solid #34334f;
+}
+
+@media(max-width: 768px) {
+    .menu {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #191e38;
+        padding: 20px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <div class="logo">MY PORTFOLIO</div>
+
+    <button class="menu" id="menuBtn">☰</button>
+
+    <ul id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div>
+        <p>HELLO! WELCOME TO MY PORTFOLIO</p>
+
+        <h1>I'm <span>Your Name</span></h1>
+
+        <h3>Data Science Student</h3>
+
+        <p>
+            I am passionate about technology,
+            programming, data science and
+            creating innovative solutions.
+        </p>
+
+        <a href="#projects" class="btn">Explore My Work</a>
+    </div>
+
+    <div class="profile">YN</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="about">
+        <p>
+            I am currently pursuing M.Sc. Data Science
+            at KPR College. I am interested in Data Science,
+            Web Development, Programming and Analytics.
+
+            I enjoy learning new technologies and developing
+            creative projects to solve real-world problems.
+        </p>
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Data Analysis</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">VS Code</div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project">
+
+            <h3>Smart Productivity System</h3>
+
+            <p>
+                A smart productivity website that helps
+                users manage daily tasks, goals, habits,
+                schedules and reminders.
+            </p>
+
+            <a href="https://github.com/" target="_blank">
+                View Project →
+            </a>
+
+        </div>
+
+        <div class="project">
+
+            <h3>Data Analysis Project</h3>
+
+            <p>
+                A data analysis project focused on
+                exploring datasets, identifying patterns
+                and presenting meaningful insights.
+            </p>
+
+            <a href="https://github.com/" target="_blank">
+                View Project →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+
+    <h2>Education</h2>
+
+    <div class="education-card">
+
+        <h3>M.Sc. Data Science</h3>
+
+        <p>KPR College</p>
+
+        <p>Currently Pursuing</p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>Let's connect and work together!</p>
+
+        <a href="mailto:your.email@gmail.com">
+            Email
+        </a>
+
+        <a href="https://github.com/your-username"
+           target="_blank">
+            GitHub
+        </a>
+
+        <a href="https://linkedin.com/in/your-profile"
+           target="_blank">
+            LinkedIn
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Your Name | Personal Portfolio</p>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+    navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("show");
+    });
+});
+</script>
+
+</body>
+</html>
